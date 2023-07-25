@@ -1,0 +1,38 @@
+sudo docker images
+sudo docker ps
+docker login
+docker build -t eureka-server .
+docker run -p 8080:8080 srdockehub2/eureka-server
+sudo docker network ls
+sudo docker network create testdocker
+sudo docker ps -a
+docker create --name python-container pythonimage
+docker rename python-container pythoncontainer(To rename the existing container, utilize the “docker rename <old-name> <new-name>” command:)
+docker start -i python-container
+sudo docker container run --network testdocker --name amazon-shopping -p 8761:8761 -d srdockerhub2/amazon-shopping
+sudo docker container logs eureka-server
+docker rm -f $(docker ps -a -q)--delete all containers
+
+///single container delete
+testubnutudocker@DESKTOP-161CQN8:~$ sudo docker stop a447d7ceabe5
+a447d7ceabe5
+testubnutudocker@DESKTOP-161CQN8:~$ sudo docker rm a447d7ceabe5
+
+
+//image delete in docker
+docker rmi imageName
+
+
+
+Run the following command to remove Docker container:
+docker stop <Container_ID>
+docker rm <Container_ID>
+Where Container_ID is the Docker container ID.
+Optional: Run the following command to remove the container forcefully:
+docker rm -f < Container_ID>
+Run the following command to remove the Docker image:
+docker rmi -f <Image_name>
+
+sudo docker container run --network testdocker --name eureka-server -p 8761:8761 -d eureka-server
+sudo docker container run --network testdocker --name amazon-shopping -p 9999:9999-d amazon-shopping
+sudo docker container run --network testdocker --name payment-service -p 8888:8888 -d payment-service
