@@ -4,6 +4,12 @@ services:
     image: eureka-server
     ports:
       - "8761:8761"
+    build:
+      context: ./discoveryserver
+      dockerfile: Dockerfile
+    environment:
+      EUREKASERVER_URI: "http://eureka-server:8761/eureka/"
+      EUREKASERVER_PORT: "8761"
     networks:
       - eureka-integration
   
