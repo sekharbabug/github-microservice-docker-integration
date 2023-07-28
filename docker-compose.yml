@@ -23,7 +23,7 @@ services:
   payment:
     # image: payment-service
     build : ./payment-service
-    dokcerfile : Dockerfile
+    dockerfile : Dockerfile
     ports:
       - "8888:8888"
     networks:
