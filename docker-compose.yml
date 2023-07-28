@@ -1,22 +1,18 @@
 version: "3"
 services:
   eureka:
-    image: eureka-server
+    # image: eureka-server
+    build : ./eureka-sever
+    dockerfile: Dockerfile
     ports:
       - "8761:8761"
-    build:
-      context: ./discoveryserver
-      dockerfile: Dockerfile
-    environment:
-      EUREKASERVER_URI: "http://eureka-server:8761/eureka/"
-      EUREKASERVER_PORT: "8761"
     networks:
       - eureka-integration
   
   amazon:
-    image: amazon-shopping
-    environment:
-        - "EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka-server:8761/eureka"
+    # image: amazon-shopping
+    build : ./amazon-shopping
+    dockerfile : Dockerfile
     ports:
       - "9999:9999"
     networks:
@@ -25,9 +21,9 @@ services:
        - eureka 
   
   payment:
-    image: payment-service
-    environment:
-        - "EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka-server:8761/eureka"
+    # image: payment-service
+    build : ./payment-service
+    dokcerfile : Dockerfile
     ports:
       - "8888:8888"
     networks:
