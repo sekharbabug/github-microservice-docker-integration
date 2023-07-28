@@ -3,7 +3,7 @@ services:
   eureka:
     # image: eureka-server
     build : ./eureka-sever
-    dockerfile: Dockerfile
+    # dockerfile: Dockerfile
     ports:
       - "8761:8761"
     networks:
@@ -12,7 +12,7 @@ services:
   amazon:
     # image: amazon-shopping
     build : ./amazon-shopping
-    dockerfile : Dockerfile
+    # dockerfile : Dockerfile
     ports:
       - "9999:9999"
     networks:
@@ -23,7 +23,7 @@ services:
   payment:
     # image: payment-service
     build : ./payment-service
-    dockerfile : Dockerfile
+   # dockerfile : Dockerfile
     ports:
       - "8888:8888"
     networks:
